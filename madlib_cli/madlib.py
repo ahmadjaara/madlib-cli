@@ -39,8 +39,8 @@ if __name__ == "__main__":
         madlib_text_content=read_template('assets/template.txt')
         # print(madlib_text_content)
         actual_stripped,actual_parts=parse_template(madlib_text_content)
-        print(actual_parts)
-        print(actual_stripped)
+        # print(actual_parts)
+        # print(actual_stripped)
         user_input=[]
         for elem in actual_parts:
             user_input+=[input(f"Enter {elem}:")]
@@ -51,4 +51,11 @@ if __name__ == "__main__":
         the result......*******
 
         """)
-        print(merge(actual_stripped,inputs_tuple))
+        # creat madlib_game text file 
+        with open('madlib_game.txt', 'w') as f:
+            f.write(merge(actual_stripped,inputs_tuple)) 
+        
+        # print(merge(actual_stripped,inputs_tuple))
+        #print the content of the text file 
+        with open('madlib_game.txt', 'r') as f:
+            print(f.read())
